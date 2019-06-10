@@ -1,0 +1,1 @@
+export const interval = 1000 * 1
