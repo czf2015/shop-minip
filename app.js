@@ -1,10 +1,13 @@
+// 
 import {
     store,
     dispatch,
 } from './store/index.js'
+// 
 import { login, authorize, getWxUserInfo } from './utils/Admin.js'
 import { getCartInfo, getProductsInfo } from './utils/purchase.js'
 import { wxerrorlog } from './utils/Error.js'
+// 
 const version = '0.0.0' + 'a' //小程序发布版本号
 
 
