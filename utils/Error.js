@@ -3,7 +3,7 @@ import {baseURL, path} from '../mocks/API.js'
 // 
 import {store} from '../store/index.js'
 // 
-import { getStorageSync } from './Storage.js'
+import { getStorageSync } from './Platform.js'
 
 
 export function wxerrorlog(error = {}, position = '') {

@@ -1,7 +1,11 @@
+// 
+import { format, adapt } from '../utils/Parse.js'
+import { deepCopy } from '../utils/Object.js'
+// 
 import state from 'state.js'
-import { deepCopy, format, adapt } from '../utils/tools.js'
-
+// 
 const record = {}
+
 
 export const store = {
   state: { ...state },
@@ -225,13 +229,14 @@ export const store = {
   },
 }
 
-
+// 
 export function dispatch(action, payload) {
   store[action](payload)
   // if (payload.key === 'suggestion' || payload.key === 'initData') {
   //   store.record(action, payload)
   // }
 }
+
 
 // 可结合polyfill.js中keyValues函数使用
 export function dispatches(action, payloads) {

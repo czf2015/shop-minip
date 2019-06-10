@@ -20,7 +20,7 @@ import {
 } from './Parse.js'
 import {
   setStorageSync
-} from './Storage.js'
+} from './Platform.js'
 // 
 const url = `${baseURL}/${path.admin}`
 

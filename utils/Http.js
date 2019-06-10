@@ -14,7 +14,7 @@ import {
 import {
   login
 } from './Admin.js'
-import { getStorageSync } from './Storage.js'
+import { getStorageSync } from './Platform.js'
 
 
 export function http({

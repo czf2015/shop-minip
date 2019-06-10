@@ -20,7 +20,7 @@ import {
 } from './Error.js'
 import {
     getStorageSync
-} from './Storage.js'
+} from './Platform.js'
 import {
     isAvailable
 } from './Object.js'
