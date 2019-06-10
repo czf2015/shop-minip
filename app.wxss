@@ -1,0 +1,7 @@
+import "./styles/Font.wxss";
+import "./styles/Reset.wxss";
+import "./styles/Base.wxss";
+import "./styles/Layout.wxss";
+import "./styles/State.wxss";
+import "./styles/Theme.wxss";
+import "./styles/Module.wxss";

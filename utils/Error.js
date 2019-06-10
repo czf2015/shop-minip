@@ -1,5 +1,8 @@
-import {store} from '../store/index.js'
+// 
 import {baseURL, path} from '../mocks/API.js'
+// 
+import {store} from '../store/index.js'
+// 
 import { getStorageSync } from './Storage.js'
 
 

@@ -1,6 +1,6 @@
-const LINE = 'https://youzan.lemonbox.net/api'
-const TEST = 'https://test.lemonbox.net/api'
-export const baseURL= LINE
+const LINE = 'https://***/api'
+const TEST = 'https://test.***/api'
+export const baseURL = LINE
 
 export const path = {
   // 认证

@@ -1,5 +1,5 @@
 // 
-import {interval} from "../mock/DATE.js"
+import {interval} from "../mocks/TIME.js"
 
 
 export const wish = {
