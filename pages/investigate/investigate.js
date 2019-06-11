@@ -104,7 +104,7 @@ Page({
   },
 
   // 提交表单
-  formSubmit(e) {
+  submitForm(e) {
     const { questions } = this.data
     const { openid } = store.state
     const answer = { ...e.detail.value, openid }

@@ -1,4 +1,4 @@
-<form bindsubmit="formSubmit">
+<form bindsubmit="submitForm">
   <block wx:for="{{questions}}" wx:for-item="question" wx:key="{{index}}">
     <!-- 单选 -->
     <view class="question" wx:if="{{question.type == 'radio'}}" style="margin-bottom: {{question.other && question.options[question.options.length - 1].checked ? '-4.8vh' : '0'}};">
