@@ -15,7 +15,7 @@ App({
     },
 
     onLaunch() {
-        dispatch('set', { key: 'version', value: version })
+        dispatch('set', { version })
         login().then(cookies => {
             getCartInfo()
         })

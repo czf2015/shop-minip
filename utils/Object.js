@@ -22,15 +22,14 @@ export function isAvailable(x) {
     x
 }
 
-
-export function keyValue(obj) {
-  return {
-    key: Object.keys(obj)[0],
-    value: Object.keys(obj).map(key => obj[key])[0] // Object.values(obj)[0]
-  }
+export function keyValues(obj) {
+  return Object.keys(obj).map(key => ({
+    key,
+    value: obj[key]
+  }))
 }
 
-export function keyValues(objs) {
-  return objs.map(obj => keyValue(obj))
+export function keyValue(obj) {
+  return keyValues(obj)[0]
 }
 

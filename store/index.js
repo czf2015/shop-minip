@@ -239,6 +239,6 @@ export function dispatch(action, payload) {
 }
 
 
-export function dispatches(action, payloads) {
-  payloads.forEach(payload => dispatch(action, payload))
+export function dispatches(action, payload) {
+  Object.keys(payload).forEach(key => dispatch(action, {[key]: payload[key]}))
 }
