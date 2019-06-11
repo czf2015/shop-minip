@@ -38,14 +38,14 @@ export const store = {
       })
     }
   },
-  switch({ key, value }) {
+  toggle({ key, value }) {
     if (typeof state[key] === 'boolean' && typeof value === 'boolean') {
       this.state[key] = value
     } else {
       throw new Error({
         name: 'TypeError',
         message: `${key} or ${value} is not boolean`,
-        stack: `dispatch('switch', ${{ key, value }})`
+        stack: `dispatch('toggle', ${{ key, value }})`
       })
     }
   },
@@ -238,7 +238,7 @@ export function dispatch(action, payload) {
 }
 
 
-// 可结合polyfill.js中keyValues函数使用
+// 可结合Object.js中keyValues函数使用
 export function dispatches(action, payloads) {
   payloads.forEach(payload => dispatch(action, payload))
 }
