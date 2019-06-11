@@ -1,0 +1,77 @@
+/* components/address/address.wxss */
+
+
+.addressBoxSide {
+  margin-left: 40rpx;
+  margin-top: 32rpx;
+  width: 670rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.addressAdd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 32rpx;
+  padding: 0 73rpx;
+  width: 100vw;
+  height: 92rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.addressHr {
+  margin-left: 6%;
+  height: 1rpx;
+  width: 88%;
+  background: #ededed;
+}
+
+.addressBox {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  margin: 10rpx 0;
+  font-size: 24rpx;
+}
+
+.addressIcon {
+  margin: 0 20rpx 0 40rpx;
+  width: 35rpx;
+  height: 44rpx;
+}
+
+.addressName {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #2e2e2e;
+}
+
+.addressPhone {
+  margin-left: 35rpx;
+  color: #2e2e2e;
+}
+
+.addressMsg {
+  margin-right: 60rpx;
+  width: 441rpx;
+}
+
+.addressIdCard {
+  margin-left: 35rpx;
+  color: #333;
+}
+
+.addressHr {
+  background-color: #686868;
+}

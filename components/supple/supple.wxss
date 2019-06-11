@@ -1,0 +1,17 @@
+/* components/supple/supple.wxss */
+
+
+.category {
+  /* margin-bottom: 60rpx; */
+}
+
+.title {
+  font-size: 42rpx;
+  line-height: 2;
+  font-weight: bold;
+  font-family: PingFangSC-Semibold;
+  color: #000;
+}
+
+.content {
+}

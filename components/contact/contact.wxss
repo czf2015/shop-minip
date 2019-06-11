@@ -1,0 +1,22 @@
+/* components/contact/contact.wxss */
+@import "../../templates/arrow/arrow.wxss";
+
+
+.contact {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.contact::after {
+  border: none;
+}
+
+.icon {
+  width: 35rpx;
+}
+
+.text {
+  padding-left: 10rpx;
+}
+

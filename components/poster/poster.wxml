@@ -1,0 +1,25 @@
+<!--components/poster/poster.wxml-->
+
+
+<view class='eventMark'>
+  <view class='eventPoster'>
+    <!-- <view class='posterCancel' catchtap='cancel'>
+      <view class='posterCancelHrBox'>
+        <view class='posterCancelHr posterCancelHrTop'></view>
+        <view class='posterCancelHr posterCancelHrDown'></view>
+      </view>
+    </view> -->
+    <cancel class="posterCancel" catchtap="cancel" />
+
+    <view>
+    </view>
+    <swiper class='posterSwiper' bindchange='change'>
+      <swiper-item class='posterSwiperItem' wx:for="{{posters}}" wx:key="{{index}}">
+        <image class='posterImg' mode='widthFix' src="{{url + item}}" />
+      </swiper-item>
+    </swiper>
+    <view class='pointBox' wx:if="{{posters.length > 1}}">
+      <view class="point {{current == index ? 'selectPoint' : ''}}" wx:for="{{posters.length}}" wx:key=""></view>
+    </view>
+  </view>
+</view>

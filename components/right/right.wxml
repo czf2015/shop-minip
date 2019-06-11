@@ -1,0 +1,9 @@
+<!--components/right/right.wxml-->
+
+
+<view class="hrBox">
+  <view class="hrSide">
+    <text class="hr leftHr"></text>
+    <text class="hr rightHr"></text>
+  </view>
+</view>

@@ -1,0 +1,76 @@
+/* pages/investigate/investigate.wxss */
+
+.question {
+  margin: 2vh 5vw;
+  width: 90vw;
+}
+
+.hide {
+  display: none;
+}
+
+.title {
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  margin: 2vw 5vw;
+  width: 80vw;
+  font-size: 2.5vh;
+}
+
+.item {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+.radio {
+  margin-right: 2vw;
+  width: 9vw;
+}
+
+.phone {
+}
+
+.checkbox {
+  margin-right: 2vw;
+  width: 9vw;
+}
+
+.textarea {
+  margin: 1vw 5vw;
+  width: 80vw;
+  height: 10vh;
+  border: 1rpx #ccc solid;
+}
+
+.btn {
+  margin: 4vh 0;
+  margin-left: 12.5vw;
+  width: 75vw;
+  text-align: center;
+  font-size: 5vw;
+  line-height: 2.2;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff100;
+  border-radius: 45rpx;
+}
+
+.btn::after {
+  border: none;
+}
+
+.other {
+  position: relative;
+  bottom: 5vh;
+  left: 16vw;
+  width: 70vw;
+  font-size: 2.5vh;
+  background-color: #fff;
+  border-bottom: 1rpx #ccc solid;
+}

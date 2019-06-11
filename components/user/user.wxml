@@ -1,0 +1,15 @@
+<!--components/user/user.wxml-->
+
+
+<button open-type="getUserInfo" bindgetuserinfo="getWxUserInfo" class="getUserBtn" wx:if="{{!hasWxUserInfo && canIUse}}">获取头像昵称</button>
+<view class="account" wx:else>
+  <image src="{{wxUserInfo.avatarUrl}}" class="avatar" mode="widthFix" />
+  <view class='left'>
+    <text class='username'>{{wxUserInfo.nickName}}</text>
+    <view class='dragonRefer' wx:if="{{promocode}}">邀请码：
+      <text selectable='true'>{{promocode}}</text>
+    </view>
+    <text class='dragonRefer' wx:else>下单后，自动生成邀请码</text>
+    <text class='dragonRefer'>已邀请人数：{{promocodeUsage.length}}</text>
+  </view>
+</view>

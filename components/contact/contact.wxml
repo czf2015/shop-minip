@@ -1,0 +1,9 @@
+<!--components/contact/contact.wxml-->
+<import src="../../templates/arrow/arrow.wxml" />
+
+
+<button class='contact' session-from='udesk|{{wxUserInfo.nickName}}({{unionId}})|{{wxUserInfo.avatarUrl}}' open-type="contact">
+  <image class='icon' src='/image/service.png' mode='widthFix' />
+  <text class='text'>联系客服</text>
+  <template is="arrow"/>
+</button>

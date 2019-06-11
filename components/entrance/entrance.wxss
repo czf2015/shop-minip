@@ -1,0 +1,99 @@
+/* components/entrance/entrance.wxss */
+
+
+.title {
+  display: flex;
+  margin: 0 40rpx;
+  padding: 24rpx 0;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #eeede6;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.text {
+  text-align: right;
+  font-family: PingFangSC-Medium;
+  font-size: 24px;
+  color: #B1B1B1;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  padding: 30rpx;
+  font-size: 24rpx;
+  color: #6F6F6F;
+  font-weight: bold
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+}
+
+.figure_num {
+  background: red;
+  color: white;
+  width: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25rpx;
+  font-size: 23rpx;
+  height: 25rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 5px;
+  padding-left: 1rpx;
+}
+
+.icon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.myTitle {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.elseTitle {
+  border-radius: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
+
+.hrBox {
+  width: 25rpx;
+  height: 40rpx;
+  position: relative;
+}
+
+.hr {
+  width: 13rpx;
+  height: 3rpx;
+  background-color: #b6b6b6;
+  position: absolute;
+  left: 9rpx;
+}
+
+.hrLeft {
+  transform: rotate(45deg);
+  top: 40%;
+}
+
+.hrRight {
+  transform: rotate(-45deg);
+  top: 60%;
+}

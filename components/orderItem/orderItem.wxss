@@ -1,0 +1,157 @@
+/* components/orderItem/orderItem.wxss */
+
+
+page {
+  background: rgb(242, 242, 242);
+}
+
+.wrapper {
+  width: 670rpx;
+  margin: 32rpx 40rpx 0;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding:35rpx 35rpx 0 25rpx;
+  font-size: 25rpx;
+  line-height: 2;
+  align-items:flex-end;
+}
+
+.id {
+  font-size: 18rpx;
+  color: #ababab;
+}
+
+.status {
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.figure {
+  margin:40rpx 35rpx 0 25rpx;
+  display: flex;
+}
+
+.mediumBox {
+  position: relative;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.medium {
+  width: 180rpx;
+  height: 180rpx;
+  display: block;
+}
+
+.mediumMsg {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.67);
+  color: #fff;
+  top: 0;
+  left: 0;
+  font-size: 16rpx;
+  padding: 5rpx;
+  border-top-left-radius: 10rpx;
+}
+
+.figcaption {
+margin-left:20rpx;
+max-width:420rpx;
+text-align: justify
+}
+
+.figcaptionName {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom:28rpx;
+}
+
+.figcaptionSpecify {
+  color: #6a6a6a;
+}
+
+.figcaptionPrice {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.total {
+  display:flex;
+justify-content:flex-end;
+font-size:22rpx;
+color:#616566;
+align-items:center;
+margin-top:-30rpx;
+margin-bottom:30rpx;
+
+}
+
+.totalPrice {
+  font-size: 30rpx;
+  color: #00282a;
+  margin-right: 35rpx
+}
+
+.hr {
+  height: 1rpx;
+  background-color: #E5E5E5;
+}
+.downBox{
+  display: flex;
+  justify-content:space-between;
+align-items:center;
+padding:10px 0;
+
+}
+.downOrderNum {
+  font-size: 24rpx;
+  color: #ababab;
+  margin-left:25rpx;
+}
+
+.look {
+  display: block;
+  text-align: center;
+  line-height: 2;
+  color: blue;
+  outline: 1px #f0f0f0 solid;
+}
+
+.operation {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20rpx;
+  font-size: 24rpx;
+
+}
+
+.primary {
+  display: inline-block;
+  width:136rpx;
+text-align:center;
+line-height:50rpx;
+border-radius:50rpx;
+border: 2rpx solid #FFF000;
+}
+
+.default {
+ display: inline-block;
+  width:136rpx;
+text-align:center;
+line-height:50rpx;
+background-color:#fff100;
+border-radius:50rpx;
+border: 2rpx solid #FFF000;
+margin-left:20rpx;
+}
+
+.icon {
+  margin-left: 10rpx;
+  width: 51rpx;
+  height: 34rpx;
+}

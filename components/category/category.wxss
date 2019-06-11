@@ -1,0 +1,36 @@
+/* components/category/category.wxss */
+
+.category {
+  padding-bottom: 20rpx;
+  background: #dcdee0;
+}
+
+.title {
+  margin: 20rpx 0 20rpx;
+  font-size: 42rpx;
+  line-height: 2;
+  font-weight: bold;
+  font-family: PingFangSC-Semibold;
+  color: #2a2a2a;
+}
+
+.subtitle {
+  margin-top: -40rpx;
+  font-size: 30rpx;
+  line-height: 2;
+  font-weight: bold;
+  font-family: PingFangSC-Medium;
+  color: #5e5e5e;
+}
+
+.content {
+  /* padding-right: 30rpx; *//* width: 98vw; */
+}
+
+.check {
+  display: none;
+}
+
+.select {
+  margin: 44rpx 0 0 30rpx;
+}

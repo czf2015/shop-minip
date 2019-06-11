@@ -1,0 +1,31 @@
+<view class="title">{{title}}</view>
+
+<view class="board">
+  <view class="header">
+    <view class="figcaption">
+      <view class="tip" wx:if="{{tip}}">{{tip}}
+      </view>
+      <view class="name">{{name}}
+      </view>
+      <view class="desc">{{desc}}
+      </view>
+      <view class="icons">
+        <image class="icon" wx:for="{{icons}}" wx:key="{{index}}" src="{{item}}" />
+      </view>
+    </view>
+    <image class="figure" src="{{figure}}" />
+  </view>
+
+  <view class="content">
+    <view class="summary">
+    {{summary}}
+    </view>
+    <view class="details">
+    {{details}}
+    </view>
+  </view>
+
+  <view class="footer">
+    <slot />
+  </view>
+</view>

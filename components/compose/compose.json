@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "category": "/components/category/category",
+    "supple": "/components/supple/supple",
+    "select": "/components/select/select",
+    "screen": "/components/screen/screen",
+    "cancel": "/components/cancel/cancel"
+  }
+}

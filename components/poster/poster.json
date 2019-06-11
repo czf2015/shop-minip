@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cancel": "/components/cancel/cancel"
+  }
+}

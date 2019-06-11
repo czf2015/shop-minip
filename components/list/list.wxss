@@ -1,0 +1,20 @@
+/* components/list/list.wxss */
+
+.figure {
+  display: flex;
+  align-items: center;
+  padding: 45rpx 38rpx;
+}
+
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.figcaption {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 10rpx;
+  width: 545rpx;
+  border-bottom: 1px solid #E2E2E3;
+}

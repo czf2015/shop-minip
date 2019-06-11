@@ -1,0 +1,118 @@
+<!-- medicines -->
+
+
+<view class="section relative" hidden="{{display === 'show'}}">
+  <category wx:for="{{categories}}" wx:key="{{index}}" category="{{item}}" bindremove="remove" bindcheckboxChange="checkboxChange" />
+</view>
+
+
+<!-- supplement -->
+<view class="section">
+  <view wx:if="{{no_herbs_flag}}" class="row add center">
+    <text class="add_desc1 ">
+      您当前处于孕期/备孕期/哺乳期,
+      不建议添加营养师推荐之外的补剂。
+    </text>
+    <image src="/image/feeder.png" class="add_img " mode="widthFix" />
+  </view>
+  <view wx:else class="row add center" bindtap="popup">
+    <text class="add_desc">添加其他补剂</text>
+    <image src="/image/more.png" class="add_img " mode="widthFix" />
+  </view>
+  <!-- 添加补剂弹窗 -->
+  <screen show="{{display === 'show'}}" padding="padding-bottom: 375rpx;">
+    <supple wx:for="{{categories}}" wx:key="{{index}}" category="{{item}}" bindselect="append" />
+    <view style="width: 670rpx; text-align: center; font-size: 22rpx; line-height: 82rpx; color: #828282;">这就是全部补剂了</view>
+    <!-- <view class='footer'> -->
+      <button bindtap="done" class="confirm">完成 ({{typeNum}}种)</button>
+    <!-- </view> -->
+    <view></view>
+  </screen>
+</view>
+
+
+<!-- footer -->
+<view class="footer row" hidden="{{onOff === 'on' || display === 'show'}}">
+  <text class="footer_cost"><text class="footer_digit">{{sum}}</text> 元/月</text>
+  <text class="footer_excess" wx:if="{{excess}}">{{typeNum > 8 ? '不能超过8种' : '不能超过9颗'}}</text>
+  <text class="footer_finish" bindtap="finish" wx:else>完成 ({{typeNum}}种)</text>
+</view>
+
+
+<!-- 选药完成弹窗 -->
+<scroll-view scroll-y class="screen" hidden="{{onOff === 'off'}}">
+  <!-- <view class="" /> -->
+  <scroll-view scroll-y class="wrapper_screen">
+    <cancel class="cancel" catchtap="cancel" />
+    <!-- <view class="row pack">
+      <view class="pack_left">
+        <image src="http://image.lemonbox.net/img/orderDetail/pack.png" class="pack_image" mode="widthFix" />
+        <text class="pack_greet">{{name}}</text>
+      </view>
+
+      <view class='pack_right'>
+        <text class="pack_user">{{name}}的\n每日维生素补充包</text>
+        <view class="pack_number">
+          <text>共 {{typeNum}} 种补剂</text>
+        </view>
+        <view class="row">
+          <view class="pack_price">
+            <text class='little'>￥</text>{{pay}}
+          </view>
+          <view class="pack_price_line" wx:if='{{specify == 3}}'>
+            <text class='little'>￥</text>{{sum * specify}}
+          </view>
+        </view>
+      </view>
+    </view> -->
+    <view class="recipe">
+      <view class="recipe_name">{{giftReferCode==sourceGiftReferCode ? 'For ' : 'Hi, '}}{{name}}</view>
+      <view class="recipe_type">{{giftReferCode==sourceGiftReferCode ? '' : '你的'}}补充包中有{{typeNum}}种补剂</view>
+    </view>
+
+    <view class="box">
+      <view class="box_label">选择规格</view>
+      <view class="box_content">
+        <radio-group class="radio-group" bindchange="choose">
+          <label class="row specify_content" wx:for="{{radios}}" wx:key="{{index}}">
+            <view class="row-item">
+              <radio class="radio" value="{{item.value}}" checked="{{item.checked}}" />
+              <view class='selectBox'>
+                <select checked="{{item.checked}}" class="select" />
+              </view>
+              <view class="first-letter">{{item.value}}</view>
+              <text class="suffix">月装</text>
+            </view>
+            <view class='row-item-middle'>
+              <view class="row-item {{specify === item.value ? 'primary price' : 'default'}}">{{monthPrice[item.value]}} 元/月</view>
+            </view>
+            <view class='row-item-right'>
+              <view class="row-item {{specify === item.value ? 'primary' : 'default'}}" wx:if="{{transportFee[item.value]}}">运费：¥ {{transportFee[item.value]}}
+              </view>
+              <view class="row-item {{specify === item.value ? 'primary' : 'default'}}" wx:else>免运费</view>
+            </view>
+          </label>
+        </radio-group>
+        <view class="total">合计：
+          <text class="pay">￥{{pay + transportFee[specify]}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='box' wx:if="{{giftReferCode==sourceGiftReferCode}}">
+      <view class="box_label">填写祝福语</view>
+      <view class="box_content gift_content">
+        <view class='input_wrapper'>收礼人：
+          <input class="input_text" placeholder-class='placeholder' placeholder='填写收礼人姓名' value='{{wish.receiver.value}}' maxlength="12" cursor-spacing="50" bindinput='fill' id='receiver'></input>
+        </view>
+        <view class='input_wrapper'>祝福语：
+          <input class="input_text" placeholder-class='placeholder' placeholder='填写祝福语' value='{{wish.content.value}}' maxlength="100" cursor-spacing="50" bindinput='fill' id='content'></input>
+        </view>
+        <view class='input_wrapper'>送礼人：
+          <input class="input_text" placeholder-class='placeholder' placeholder='填写自己姓名' value='{{wish.sender.value}}' maxlength="12" cursor-spacing="50" bindinput='fill' id='sender'></input>
+        </view>
+      </view>
+    </view>
+    <view style="height: 375rpx" />
+    <slot />
+  </scroll-view>
+</scroll-view>

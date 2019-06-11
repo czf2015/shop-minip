@@ -1,0 +1,9 @@
+<view class="category">
+  <view class="title" hidden="{{isSelectAll && category.title !== '推荐草本补剂' || category.title === '其它草本补剂'}}">
+  {{category.title === '基本营养补剂' ? '营养师推荐的补剂' : '其他可能有帮助的补剂'}}
+  </view>
+
+  <view class="content">
+    <card wx:for="{{category.items}}" wx:key="{{item.id}}" entity="{{item}}" bindselect="select" />
+  </view>
+</view>

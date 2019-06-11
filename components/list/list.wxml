@@ -1,0 +1,10 @@
+<!--components/list/list.wxml-->
+
+
+<navigator wx:for="{{list}}" wx:key="{{index}}" url="{{item.url}}" class="figure">
+  <image src="{{item.image}}" class="icon" />
+  <view class="figcaption">
+    <text>{{item.name}}</text>
+    <image src="/image/rightArrow.png" class="icon" mode="widthFix" />
+  </view>
+</navigator>

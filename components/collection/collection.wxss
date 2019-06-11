@@ -1,0 +1,41 @@
+/* components/collection/collection.wxss */
+
+
+.box {
+  box-sizing: border-box;
+  padding: 100rpx 70rpx;
+  width: 690rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.wrapper {
+  margin-top: -20rpx;
+  font-size: 34rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.options {
+}
+
+.option {
+  justify-content: space-between;
+  height: 7vh;
+}
+
+.textarea {
+  padding: 26rpx 20rpx;
+  width: 500rpx;
+  height: 100rpx;
+  border: 3rpx solid #d7d7d7;
+  border-radius: 18rpx;
+}
+
+.placeholder {
+  font-size: 30rpx;
+  color: #D7D7D7
+}

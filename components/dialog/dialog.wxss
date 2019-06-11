@@ -1,0 +1,73 @@
+/* components/dialog/dialog.wxss */
+
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(34, 34, 34, 0.75);
+}
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40rpx 0;
+  width: 540rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.header {
+  width: 540rpx;
+  height: 382rpx;
+}
+
+.content {
+  padding: 40rpx 74rpx;
+}
+
+.title {
+  font-family: PingFangSC-Semibold;
+  letter-spacing: 0;
+  font-size: 40rpx;
+  line-height: 52rpx;
+  color: #2a2a2a;
+}
+
+.paragraph {
+  margin-top: 20rpx;
+  /* text-align-last: justify;  */
+  font-family: PingFangSC-Regular;
+  letter-spacing: 0;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  color: #4a4a4a;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 45rpx;
+  text-align: center;
+  letter-spacing: 2rpx;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  color: #2a2a2a;
+  font-family: PingFangSC-Semibold;
+}
+
+.btn_left {
+  width: 210rpx;
+  height: 62rpx;
+  border: 3rpx solid #e3e3e3;
+  border-radius: 44px;
+  background: #fff;
+}
+
+.btn_right {
+  width: 216rpx;
+  height: 68rpx;
+  background: #fff100;
+  border-radius: 44px;
+}

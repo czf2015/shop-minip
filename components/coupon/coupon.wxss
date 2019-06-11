@@ -1,0 +1,163 @@
+/* components/coupon/coupon.wxss */
+
+
+@import "../../font/font.wxss";
+
+/* couponOne */
+
+.couponNo {
+  text-align: center;
+  color: #ccc;
+}
+.couponAllBox{
+  flex-grow: 1;
+  overflow-y: auto
+}
+.couponScroll {
+  width: 100%;
+  box-sizing: border-box;
+  padding:15px 0 3vh;
+  height: 100%;
+}
+
+.couponBox {
+  background-color: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 30rpx;
+  width: 672rpx;
+  margin-left: 39rpx;
+}
+
+.couponBox1 {
+  opacity: 0.8;
+}
+
+.couponLeft {
+  width: 153rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 13rpx;
+}
+
+.couponContent {
+  font-size: 80rpx;
+  font-family: 'DIN Alternate';
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hole {
+  width: 26rpx;
+  height: 13rpx;
+  background-color: rgb(244, 244, 244);
+}
+
+.holeTop {
+  border-radius: 0 0 26rpx 26rpx;
+}
+
+.holeDown {
+  border-radius: 26rpx 26rpx 0 0;
+}
+
+.dashed {
+  flex-grow: 1;
+  border: 1rpx dashed rgb(244, 244, 244);
+}
+
+.couponMiddle {
+  flex-grow: 1;
+  padding: 31rpx 0 18rpx 52rpx;
+}
+
+.couponTitle {
+  font-size: 28rpx;
+}
+
+.couponDesc {
+  font-size: 24rpx;
+  color: #a29f9f;
+  margin-bottom: 21rpx;
+}
+
+.couponTerm {
+  font-size: 18rpx;
+  color: #c1c1c1;
+}
+
+.couponRight {
+  display: flex;
+  align-items: center;
+  margin-right: 47rpx;
+  margin-left: 28rpx;
+}
+
+.useBtn {
+  font-size: 26rpx;
+  line-height: 50rpx;
+  width: 110rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  background-color: #fff100;
+}
+
+.couponChecked {
+  width: 51rpx;
+  height: 51rpx;
+  background-color: #fff100;
+  border-radius: 30rpx;
+  position: relative;
+  border: 3rpx solid #fff;
+}
+
+.couponCheckedNo {
+  width: 51rpx;
+  height: 51rpx;
+  border-radius: 30rpx;
+  border: 3rpx solid #d7d7d7;
+}
+
+.checkedHr {
+  height: 4rpx;
+  background-color: #000;
+  position: absolute;
+}
+
+.checkedHrLeft {
+  width: 15rpx;
+  transform: rotate(45deg);
+  left: 10rpx;
+  bottom: 19rpx;
+}
+
+.checkedHrRight {
+  width: 26rpx;
+  transform: rotate(-50deg);
+  left: 16.5rpx;
+  bottom: 24rpx;
+}
+
+.noCoupon {
+  display: absolute;
+  bottom: 3vh;
+  left: 0;
+  width: 412rpx;
+  line-height: 2.2;
+  background-color: #fff;
+  font-size: 38rpx;
+  box-shadow: 0 4rpx 6rpx 0 rgba(0, 0, 0, 0.07);
+  border-radius: 55rpx;
+  color: #000;
+}
+
+.noCoupon::after {
+  border: none;
+}

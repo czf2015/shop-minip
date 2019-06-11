@@ -1,0 +1,52 @@
+<!--components/orderItem/orderItem.wxml-->
+
+
+<view class="wrapper">
+  <view class="header">
+    <text class="id" selectable='true'>订单编号：{{order.id}}</text>
+    <text class="status">{{OrderStatus[order.status]}}</text>
+  </view>
+
+  <view class="content">
+    <view class="figure" bindtap="check">
+      <view class='mediumBox'>
+        <image src="http://image.lemonbox.net/img/index/HomePage_np.jpg" class="medium" mode="aspectFill" />
+        <text class='mediumMsg'>{{Specifies[order.msg.full_order_info.orders[0].specify]}}</text>
+      </view>
+      <view class="figcaption">
+        <view class='figcaptionName'>{{order.msg.full_order_info.orders[0].name}}的每日营养补充包
+          <view class='figcaptionSpecify'>({{Specifies[order.msg.full_order_info.orders[0].specify]}})</view>
+        </view>
+        <text class="figcaptionPrice">￥{{order.msg.full_order_info.orders[0].price_info.totalPrice}}</text>
+      </view>
+    </view>
+    <view class="total">
+      合计： ￥
+      <text class='totalPrice'>{{order.msg.full_order_info.pay_info.payment}}</text>
+    </view>
+    <view class='hr'></view>
+    <view class='downBox'>
+      <text class='downOrderNum'>共 {{order.msg.full_order_info.orders.length}} 份补充包</text>
+      <view class="operation" wx:if="{{order.status === 'order_paying' || order.status === 'order_create'}}">
+        <text class="primary" bindtap="check">去支付</text>
+        <text class="default" bindtap="abolish" data-path="delete_paying_order">删除订单</text>
+      </view>
+      <view class="operation" wx:if="{{order.status === 'order_refunded'}}">
+        <text class="default" bindtap="abolish" data-path="delete_refunded_order">删除订单</text>
+      </view>
+      <view class="operation" wx:elif="{{order.status === 'order_shipped'}}">
+        <text class="primary" bindtap="sureShipped">确认收货</text>
+        <text class="default" bindtap="checkShipped">查看物流</text>
+      </view>
+      <view class="operation" wx:elif="{{order.status === 'order_paid'}}">
+        <text class="default" bindtap="refundRequest" >申请退款</text>
+      </view>
+      <view class="operation" wx:elif="{{order.status === 'order_refund_request'}}">
+        <text class="default" bindtap='cancelRefundRequest'>取消申请</text>
+      </view>
+      <view class="operation" wx:elif="{{order.status === 'order_finished'}}">
+        <text class="default" bindtap="checkShipped">查看物流</text>
+      </view>
+    </view>
+  </view>
+</view>

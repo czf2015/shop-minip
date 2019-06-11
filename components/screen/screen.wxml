@@ -1,0 +1,8 @@
+<!--components/screen/screen.wxml-->
+
+
+<scroll-view scroll-y class="page" style="{{background}}" wx:if="{{show}}" catchtouchmove='noMove'>
+  <view style="{{padding}}">
+    <slot />
+  </view>
+</scroll-view>

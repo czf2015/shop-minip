@@ -1,0 +1,8 @@
+<!--components/count/count.wxml-->
+
+
+<view class="row">
+  <text bindtap="change" data-step="{{-1}}">-</text>
+  <text>{{number}}</text>
+  <text bindtap="change" data-step="{{1}}">+</text>
+</view>

@@ -1,0 +1,37 @@
+<!--components/pack/pack.wxml-->
+
+
+<view class="entry">
+  <view class="card">
+    <view class="mediumBox">
+      <image src="http://image.lemonbox.net/img/index/HomePage_np.jpg" class="medium" mode="aspectFill" />
+      <view class="mediumMsg">{{Specifies[pack.specify]}}</view>
+    </view>
+
+    <view class="column">
+      <!-- <radio-group bindchange="radioChange">
+        <view class="specify">
+          <block wx:for="{{specifies}}" wx:key="{{index}}">
+            <label class="{{item.value === pack.specify ? 'primary' : 'default'}}">
+              <radio value="{{item.value}}" checked="{{item.value === pack.specify}}" class="none"></radio>
+              {{item.name}}
+            </label>
+          </block>
+        </view>
+      </radio-group> -->
+      <view class="row">{{pack.name}}的每日维生素补充包
+        <text class="title">({{Specifies[pack.specify]}})</text>
+      </view>
+      <text class="price">¥ {{pack.price_info.totalPrice}}</text>
+      <view class="transportFee">
+        <text wx:if="{{pack.specify !== 3}}">运费：￥{{pack.price_info.transportFee}}</text>
+        <text wx:else>免运费</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="btnBox">
+    <view class="btn preview" catchtap="preview">编辑</view>
+    <view class="btn remove" catchtap="remove">删除</view>
+  </view>
+</view>

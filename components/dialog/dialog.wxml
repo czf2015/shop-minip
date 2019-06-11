@@ -1,0 +1,16 @@
+<!--components/dialog/dialog.wxml-->
+
+
+<view class="page">
+  <view class="wrapper">
+    <image class="header" src="{{dialog.image}}" />
+    <view class="content">
+      <view class="title">{{dialog.title}}</view>
+      <view class="paragraph" wx:for="{{dialog.content}}" wx:key="{{index}}">{{item}}</view>
+    </view>
+    <view class="footer">
+      <view class="btn_left" bindtap="confirm">继续退款</view>
+      <view class="btn_right" bindtap="cancel">再等等</view>
+    </view>
+  </view>
+</view>

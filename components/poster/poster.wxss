@@ -1,0 +1,73 @@
+/* components/poster/poster.wxss */
+
+
+.eventMark {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventPoster {
+  position: relative;
+  width: 590rpx;
+  height: 1000rpx;
+  /* background: #fff; */
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: -10rpx;
+}
+
+.posterSwiperBox {
+}
+
+.posterSwiper {
+  border-radius: 14rpx;
+  overflow: hidden;
+  flex-grow: 1;
+  width: 100%;
+  transform: translateY(0);
+}
+
+.posterSwiperItem {
+}
+
+.posterCancel {
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+}
+
+.posterImg {
+  width: 590rpx;
+  height: 1000rpx;
+}
+
+.pointBox {
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  height: 119rpx;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.point {
+  width: 10rpx;
+  height: 10rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin: 10rpx;
+}
+
+.selectPoint {
+  background-color: #000;
+}

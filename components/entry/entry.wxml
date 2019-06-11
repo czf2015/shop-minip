@@ -1,0 +1,22 @@
+<view wx:if="{{entry.selected}}" class="scroll relative">
+  <view style="background: {{entry.checked ? '#ffffff' : '#f9f9f9'}}; {{entry.txtStyle}}" data-index="{{index}}" class="card row absolute" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <slot />
+    <view class="col card_left">
+      <text class="name">{{entry.name}}</text>
+      <text class="desc">{{entry.description}}</text>
+      <view class="row">
+        <text class="dose">
+          <text class="digit">{{entry.checked ? entry.dose.dose : 0}}</text> 颗 / {{unit[entry.dose.unit]}}
+        </text>
+        <text class="price">
+          <text class="digit">{{entry.month_price}}</text> 元 / 月
+        </text>
+      </view>
+    </view>
+    <view class="center card_right" style="background: {{entry.color}}">
+      <image src="{{entry.image}}" id="{{entry.id}}" catchtap="look" class="small" mode="widthFix" />
+    </view>
+  </view>
+
+  <view class="remove absolute center" catchtap="remove">删除</view>
+</view>

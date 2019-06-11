@@ -1,0 +1,21 @@
+<!--components/entrance/entrance.wxml-->
+
+
+<view class='title'>
+  <view class="myTitle">{{entrance.title}}</view>
+  <view class='elseTitle' data-title="全部订单" bindtap='lookup'>
+    <text class='text'>查看全部订单</text>
+    <view class="hrBox">
+        <text class='hr hrLeft'></text>
+        <text class='hr hrRight'></text>
+      </view>
+  </view>
+</view>
+
+<view class="content">
+  <view class="figure" wx:for="{{entrance.categories}}" wx:key="{{index}}" wx:if="{{item.title !== '全部订单'}}" data-title="{{item.title}}" bindtap="lookup">
+    <image src="{{item.image}}" class="icon" mode="widthFix" />
+    <text class='figure_num' wx:if="{{item.number}}">{{item.number}}</text>
+    <text class="figcaption">{{item.title}}</text>
+  </view>
+</view>

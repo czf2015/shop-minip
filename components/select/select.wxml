@@ -1,0 +1,5 @@
+<!--components/select/select.wxml-->
+<import src="../../templates/select/select.wxml" />
+
+
+<template is="select" data="{{checked}}" />

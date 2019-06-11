@@ -1,0 +1,3 @@
+/* components/select/select.wxss */
+
+@import "../../templates/select/select.wxss";

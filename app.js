@@ -1,8 +1,8 @@
-// 
+// store
 import {
     dispatch,
 } from './store/index.js'
-// 
+// utils
 import { login, getWxUserInfo } from './utils/Admin.js'
 import { getCartInfo, getProductsInfo } from './utils/Purchase.js'
 import { wxerrorlog } from './utils/Error.js'

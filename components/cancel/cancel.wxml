@@ -1,0 +1,9 @@
+<!--components/cancel/cancel.wxml-->
+
+
+<view class='cancel'>
+  <view class='cancelHrBox'>
+    <view class='cancelHr cancelHrTop'></view>
+    <view class='cancelHr cancelHrDown'></view>
+  </view>
+</view>

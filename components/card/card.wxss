@@ -1,0 +1,77 @@
+@import "../../css/basic.wxss";
+
+
+.card {
+  margin-top: 20rpx;
+  width: 670rpx;
+  height: 252rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  z-index: 999;
+}
+
+.card_left {
+  width: 482rpx;
+  padding: 30rpx 40rpx 16rpx;
+}
+
+.card_right {
+  padding: 48rpx 0 34rpx;
+  border-radius: 0 10rpx 10rpx 0;
+}
+
+.name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+.desc {
+  flex-grow: 1;
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  line-height: 1.5;
+  font-family: PingFangSC-Regular;
+  color: #5e5e5e;
+}
+
+.price, .dose {
+  letter-spacing: -1.8rpx;
+  font-size: 22rpx;
+  line-height: 2;
+  font-family: PingFangSC-Medium;
+  color: #2a2a2a;
+}
+
+.digit {
+  padding-right: 8rpx;
+  font-size: 30rpx;
+  font-family: DINPro-Medium;
+  color: #2a2a2a;
+}
+
+.small {
+  max-height: 100%;
+  width: 158rpx;
+}
+
+.default {
+  width: 124rpx;
+  height: 48rpx;
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 48rpx;
+  background-color: #ffec01;
+  border-radius: 24rpx;
+}
+
+.primary {
+  width: 124rpx;
+  height: 48rpx;
+  text-align: center;
+  font-size: 22rpx;
+  line-height: 48rpx;
+  color: #fff;
+  background-color: #6d6d79;
+  border-radius: 24rpx;
+}

@@ -1,0 +1,19 @@
+<view wx:if="{{!entity.selected}}" class="row card">
+  <view class="col card_left">
+    <text class="name">{{entity.name}}</text>
+    <text class="desc">{{entity.description}}</text>
+    <view class="row">
+      <view class="primary" bindtap="select" wx:if="{{selected}}">- 取消</view>
+      <view class="default" bindtap="select" wx:else>+ 添加</view>
+      <text class="dose">
+        <text class="digit">{{entity.dose.dose}}</text> 颗 / {{unit[entity.dose.unit]}}
+      </text>
+      <text class="price">
+        <text class="digit">{{entity.month_price}}</text> 元 / 月
+      </text>
+    </view>
+  </view>
+  <view class="center card_right" style="background: {{entity.color}}">
+    <image src="{{entity.image}}" id="{{entity.id}}" bindtap="look" class="small" mode="widthFix" />
+  </view>
+</view>

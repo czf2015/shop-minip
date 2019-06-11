@@ -1,0 +1,7 @@
+/* components/count/count.wxss */
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  width: 375rpx;
+}

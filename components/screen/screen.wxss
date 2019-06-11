@@ -1,0 +1,12 @@
+/* components/screen/screen.wxss */
+
+
+.page {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  font-size: 34rpx;
+  overflow: hidden;
+}
+

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "entry": "/components/entry/entry",
+    "select": "/components/select/select"
+  }
+}

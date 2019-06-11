@@ -1,0 +1,18 @@
+<!--components/category/category.wxml-->
+
+
+<view class="category">
+  <view class="title" hidden="{{isSelectNone && category.title !== '推荐草本补剂' || category.title === '其它草本补剂'}}">{{category.title === '基本营养补剂' ? '营养师推荐的补剂' : '自选补剂'}}</view>
+  <view wx:if="{{category.title === '推荐草本补剂'}}" class="subtitle">标注 * 的功效有待更多研究证实。</view>
+
+  <view class="content">
+    <checkbox-group bindchange="checkboxChange">
+      <label wx:for="{{category.items}}" wx:key="{{item.id}}" wx:if="{{item.selected}}">
+        <checkbox class="check" value="{{item.id}}" checked="{{Checked[item.id]}}" />
+        <entry entry="{{item}}" bindremove="remove" >
+          <select class='select' checked="{{Checked[item.id]}}" />
+        </entry>
+      </label>
+    </checkbox-group>
+  </view>
+</view>

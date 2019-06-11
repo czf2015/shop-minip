@@ -1,0 +1,33 @@
+<!--components/address/address.wxml-->
+
+
+<navigator url="/pages/addressDetail/addressDetail?add=true" wx:if="{{!hasAddress}}" class="addressAdd">
+  <text>点击添加收货地址</text>
+  <right />
+</navigator>
+
+
+<navigator url="/pages/addressDetail/addressDetail" wx:else class="addressBoxSide">
+  <view class="address">
+    <view class="addressIcon"></view>
+    <view>
+      <view class="addressBox">
+        <text class="addressName">{{addressSelect.receiver_name}}</text>
+        <text class="addressPhone">{{addressSelect.receiver_tel}}</text>
+      </view>
+      <view class="addressBox">身份证号
+        <text class="addressIdCard">{{addressSelect.identity_card}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="addressHr"></view>
+
+  <view class="address">
+    <image class="addressIcon" src="http://image.lemonbox.net/img/orderDetail/map.png" mode="widthFix" />
+    <view class="addressBox">
+      <text class="addressMsg">{{addressSelect.delivery_province}}{{addressSelect.delivery_city}}{{addressSelect.delivery_district}}{{addressSelect.delivery_address}}</text>
+    </view>
+    <right />
+  </view>
+</navigator>

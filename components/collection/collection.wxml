@@ -1,0 +1,17 @@
+<!--components/collection/collection.wxml-->
+
+
+<view class="box">
+  <view class="wrapper">
+    <view class="options">
+      <view class="option row" wx:for="{{radios}}" wx:key="{{item.value}}">
+        {{item.name}}
+        <select data-option="{{item.value}}" bindtap="onSelect" checked="{{item.checked}}" />
+      </view>
+    </view>
+
+    <view hidden="{{!radios[radios.length - 1].checked}}">
+      <textarea class="textarea" placeholder="请输入退款原因" placeholder-class="placeholder" bindinput="onInput" />
+    </view>
+  </view>
+</view>

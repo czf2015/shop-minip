@@ -1,0 +1,107 @@
+/* components/pack/pack.wxss */
+
+
+.entry {
+    margin:55rpx 25rpx 26rpx 0;
+}
+
+.card {
+    display: flex;
+    background-color: #fff;
+}
+.row{
+  font-size: 32rpx;
+  width: 328rpx;
+  margin-bottom: 7rpx;
+  max-width:370rpx;
+
+}
+.title {
+  color: #6A6A6A
+}
+.mediumBox{
+    position: relative;
+    overflow: hidden
+}
+.medium {
+    width: 180rpx;
+    height: 180rpx;
+    display:block;
+    border-radius:10rpx;
+}
+.mediumMsg{
+  position: absolute;
+  background: rgba(0,0,0,0.67);
+  color: #fff;
+  top:0;
+  left:0;
+  font-size:16rpx;
+padding:5rpx;
+border-top-left-radius:10rpx;
+}
+.column {
+margin-left: 20rpx;
+font-size: 36rpx;
+font-weight: bold
+}
+
+.specify {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.default {
+    margin-top: 5px;
+    margin-left: 10rpx;
+    width: 30%;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 50rpx;
+    background-color: #d7d7d7;
+}
+
+.primary {
+    margin-top: 5px;
+    margin-left: 10rpx;
+    width: 30%;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 50rpx;
+    background-color: #fff000;
+}
+
+.none {
+    display: none;
+}
+
+.price {
+    font-size: 36rpx;
+    line-height: 50rpx;
+}
+.transportFee{
+  font-size: 27rpx;
+  color: #999
+}
+.preview {
+    color: #000000;
+    width: 100rpx;
+}
+
+.remove {
+    color: #444444;
+    background-color: white;
+    margin-left:37rpx;
+}
+.btnBox{
+  display: flex;
+  justify-content: flex-end;
+  margin-top:20rpx;
+}
+.btn{
+  font-size: 24rpx;
+  border: 2rpx solid #fff100;
+  line-height: 40rpx;
+  width: 116rpx;
+  border-radius: 30rpx;
+  text-align: center
+}

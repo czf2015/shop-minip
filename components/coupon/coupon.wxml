@@ -1,0 +1,53 @@
+<!--components/coupon/coupon.wxml-->
+
+
+<scroll-view class="couponScroll" scroll-y="true">
+  <view class="couponNo" wx:if="{{coupons.length <= 0}}">无可使用优惠券</view>
+
+
+  <block wx:else>
+    <block wx:for="{{coupons}}" wx:key="index2">
+      <view class="couponBox {{canUse ? '' : 'couponBox1'}}" id="{{item.id}}" catchtap="{{canUse && isSwiper ? 'alter' : ''}}">
+        <view class="couponLeft">
+          <view wx:if="{{item.group.condition[0].type == 'discount'}}">
+            <text class="couponContent">{{item.group.condition[0].content * 10}}</text>
+            <text>折</text>
+          </view>
+          <view wx:elif="{{item.group.condition[0].type == 'subtract'}}">
+            <text class="couponContent">{{item.group.condition[0].content}}</text>
+            <text>元</text>
+          </view>
+        </view>
+
+        <view class="vertical">
+          <view class="hole holeTop"></view>
+          <view class="dashed"></view>
+          <view class="hole holeDown"></view>
+        </view>
+
+        <view class="couponMiddle">
+          <view class="couponTitle">{{item.group.title}}</view>
+          <view class="couponDesc">{{item.group.desc}}</view>
+          <view class="couponTerm">
+            <text>{{item.start_at}}~{{item.end_at}}</text>
+          </view>
+        </view>
+
+        <view class="couponRight" wx:if="{{canUse}}">
+          <block wx:if="{{isSwiper}}">
+            <view class="couponChecked" wx:if="{{item.checked}}">
+              <text class="checkedHr checkedHrLeft"></text>
+              <text class="checkedHr checkedHrRight"></text>
+            </view>
+            <view class="couponCheckedNo" wx:else>
+            </view>
+          </block>
+
+          <block wx:else>
+            <navigator class="useBtn" hover-class="none" url="/pages/index/index" open-type="switchTab">去使用</navigator>
+          </block>
+        </view>
+      </view>
+    </block>
+  </block>
+</scroll-view>
