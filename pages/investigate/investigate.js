@@ -44,7 +44,7 @@ Page({
   },
 
   // 点击单选
-  radioChange(e) {
+  handleRadioChange(e) {
     const {
       questions,
     } = this.data
@@ -60,7 +60,7 @@ Page({
   },
 
   // 点击多选
-  checkboxChange(e) {
+  handleCheckboxChange(e) {
     const {
       questions,
     } = this.data
@@ -84,7 +84,7 @@ Page({
   },
 
   // 输入其他
-  inputChange(e) {
+  handleInputChange(e) {
     const {
       questions
     } = this.data

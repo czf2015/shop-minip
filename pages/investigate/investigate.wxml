@@ -3,29 +3,29 @@
     <!-- 单选 -->
     <view class="question" wx:if="{{question.type == 'radio'}}" style="margin-bottom: {{question.other && question.options[question.options.length - 1].checked ? '-4.8vh' : '0'}};">
       <text class="title">{{question.title}}</text>
-      <radio-group class="group" bindchange="radioChange" name="{{index}}-radio" id="{{index}}">
+      <radio-group class="group" bindchange="handleRadioChange" name="{{index}}-radio" id="{{index}}">
         <label class="item" wx:for="{{question.options}}" wx:for-item="option" wx:key="">
           <radio value="{{option.value}}" checked="{{option.checked}}" class="radio" /> {{option.name}}
         </label>
       </radio-group>
-      <input class="other" hidden="{{!(question.other && question.options[question.options.length - 1].checked)}}" bindinput="inputChange" id="{{index}}" />
+      <input class="other" hidden="{{!(question.other && question.options[question.options.length - 1].checked)}}" bindinput="handleInputChange" id="{{index}}" />
     </view>
 
     <!-- 多选 -->
     <view class="question" wx:elif="{{question.type == 'checkbox'}}" style="margin-bottom: {{question.other && question.options[question.options.length - 1].checked ? '-4.8vh' : '0'}}">
       <text class="title">{{question.title}}</text>
-      <checkbox-group class="group" bindchange="checkboxChange" name="{{index}}-checkbox" id="{{index}}">
+      <checkbox-group class="group" bindchange="handleCheckboxChange" name="{{index}}-checkbox" id="{{index}}">
         <label class="item" wx:for="{{question.options}}" wx:for-item="option" wx:key="">
           <checkbox value="{{option.value}}" checked="{{option.checked}}" class="checkbox" /> {{option.name}}
         </label>
       </checkbox-group>
-      <input class="other" hidden="{{!(question.other && question.options[question.options.length - 1].checked)}}" bindinput="inputChange" id="{{index}}" />
+      <input class="other" hidden="{{!(question.other && question.options[question.options.length - 1].checked)}}" bindinput="handleInputChange" id="{{index}}" />
     </view>
 
     <!-- 填空 -->
     <view class="question" wx:else>
       <text class="title">{{question.title}}</text>
-      <textarea name="{{index}}-textarea" id="{{index}}" bindinput="inputChange" class="textarea" />
+      <textarea name="{{index}}-textarea" id="{{index}}" bindinput="handleInputChange" class="textarea" />
     </view>
   </block>
 
