@@ -1,10 +1,9 @@
 // 
 import {
-    store,
     dispatch,
 } from './store/index.js'
 // 
-import { login, authorize, getWxUserInfo } from './utils/Admin.js'
+import { login, getWxUserInfo } from './utils/Admin.js'
 import { getCartInfo, getProductsInfo } from './utils/Purchase.js'
 import { wxerrorlog } from './utils/Error.js'
 // 
