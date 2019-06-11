@@ -1,0 +1,6 @@
+<template name="screen">
+  <scroll-view class="page">
+    <view class="wrapper">
+    </view>
+  </scroll-view>
+</template>

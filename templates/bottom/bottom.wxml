@@ -1,0 +1,3 @@
+<template name="bottom">
+  <view class="footer" />
+</template>

@@ -1,0 +1,6 @@
+<template name='arrow'> 
+  <view class="template_hrBox"> 
+    <text class='template_hr template_hrLeft'></text> 
+    <text class='template_hr template_hrRight'></text> 
+  </view> 
+</template>

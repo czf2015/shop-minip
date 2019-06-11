@@ -1,0 +1,43 @@
+.circle {
+  
+}
+
+.false {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 30rpx;
+}
+
+.false2 {
+  align-self: flex-start;
+}
+
+.checkFalse {
+  border: 2rpx solid #ccc;
+}
+
+.checkedFalse {
+  border: 2rpx solid #fff100;
+  position: relative;
+  background-color: #fff100;
+}
+
+.leftHr {
+  position: absolute;
+  width: 13rpx;
+  height: 5rpx;
+  background: #000;
+  transform: rotate(45deg);
+  top: 23rpx;
+  left: 7.1rpx;
+}
+
+.rightHr {
+  position: absolute;
+  width: 25rpx;
+  height: 5rpx;
+  background: #000;
+  transform: rotate(-45deg);
+  top: 19rpx;
+  left: 13rpx;
+}

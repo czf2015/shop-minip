@@ -1,0 +1,26 @@
+/* icon */
+
+
+.template_hrBox {
+  width: 25rpx;
+  height: 40rpx;
+  position: relative;
+}
+
+.template_hr {
+  width: 13rpx;
+  height: 3rpx;
+  background-color: #B1B1B1;
+  position: absolute;
+  left: 9rpx;
+}
+
+.template_hrLeft {
+  transform: rotate(45deg);
+  top: 40%;
+}
+
+.template_hrRight {
+  transform: rotate(-45deg);
+  top: 60%;
+}

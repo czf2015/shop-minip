@@ -1,0 +1,7 @@
+<template name="select">
+  <view class='false false2 checkedFalse circle' wx:if="{{checked}}">
+    <view class='leftHr'></view>
+    <view class='rightHr'></view>
+  </view>
+  <view class='false false2 checkFalse circle' wx:else></view>
+</template>

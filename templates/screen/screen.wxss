@@ -1,0 +1,14 @@
+.page {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  font-size: 34rpx;
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+
+.wrapper {
+  margin: 0 28rpx 280rpx;
+}
