@@ -1,19 +1,19 @@
 // pages/investigate/investigate.js
-
-
+// mocks
 import {
   questions
-} from '../../mock/INVESTIGATE.js'
+} from '../../mocks/INVESTIGATE.js'
 import {
-  baseUrl
-} from '../../mock/API.js'
+  baseURL,
+  path
+} from '../../mocks/API.js'
 import {
   interval
-} from '../../mock/DATE.js'
+} from '../../mocks/TIME.js'
+// store
 import {
   store
 } from '../../store/index.js'
-// const others = ['其他', '愿意']
 
 
 Page({
@@ -168,7 +168,7 @@ Page({
     }
 
     wx.request({
-      url: baseUrl + '/v1/quick_survey',
+      url: baseURL + '/v1/quick_survey',
       data: answer,
       method: 'POST',
       success(res) {
