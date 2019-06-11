@@ -1,6 +1,6 @@
 // 
 import { format, adapt } from '../utils/Parse.js'
-import { deepCopy } from '../utils/Object.js'
+import { deepCopy, keyValue, keyValues } from '../utils/Object.js'
 // 
 import state from 'state.js'
 // 
@@ -207,38 +207,38 @@ export const store = {
   },
   record(action, payload) {
     if (action !== 'foreward' && action !== 'backward') {
-      const { key } = payload
+      const { key } = keyValue(payload)
       if (record[key]) {
         record[key].position++
-        record[key].sequence.push({ action, payload, value: this.state[key] })
+        record[key].sequence.push({ action, payload, [key]: this.state[key] })
       } else {
         record[key] = {
           position: 0,
-          sequence: [{ action, payload, value: this.state[key] }],
+          sequence: [{ action, payload, [key]: this.state[key] }],
         }
       }
-      const target = record[key]
-      console.log({ key, value: target.sequence[target.position].value, ...target })
+      console.log(record[key])
     }
   },
   backward({ key }) {
-    this.state[key] = record[key].sequence[record[key].position--].value
+    this.state[key] = record[key].sequence[record[key].position--][key]
   },
   foreward({ key }) {
-    this.state[key] = record[key].sequence[record[key].position++].value
+    this.state[key] = record[key].sequence[record[key].position++][key]
   },
 }
 
 // 
 export function dispatch(action, payload) {
-  store[action](payload)
-  // if (payload.key === 'suggestion' || payload.key === 'initData') {
+  const _payload = keyValue(payload)
+  store[action](_payload)
+  // switch (_payload.key) {
+  // case 'suggestion' || 'initData' :
   //   store.record(action, payload)
   // }
 }
 
 
-// 可结合Object.js中keyValues函数使用
 export function dispatches(action, payloads) {
   payloads.forEach(payload => dispatch(action, payload))
 }
