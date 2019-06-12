@@ -245,7 +245,8 @@ export function dispatch(action, payload) {
       keyValues(payload).forEach(item => {
         store[action](item)
         // switch (item.key) {
-        // case 'suggestion' || 'initData' :
+        // case 'suggestion':
+        // case  'initData' :
         //   store.record(action, item)
         // }
       })
@@ -253,7 +254,8 @@ export function dispatch(action, payload) {
   } else {
     store[action](payload)
     // switch (payload) {
-    // case 'suggestion' || 'initData' :
+    // case 'suggestion':
+    // case  'initData' :
     //   store.record(action, payload)
     // }
   } 
