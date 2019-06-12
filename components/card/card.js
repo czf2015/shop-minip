@@ -39,10 +39,7 @@ Component({
 
     // 药品介绍
     look(e) {
-      dispatch('switch', {
-        key: 'hadLook',
-        value: true
-      })
+      dispatch('set', { hadLook: true })
       wx.navigateTo({
         url: '/pages/wikiDetail2/wikiDetail2?id=' + e.target.id,
       })

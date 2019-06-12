@@ -25,10 +25,7 @@ App({
 
     onShow(options) {
         if (options.path == 'pages/history/history' && options.scene == '1014') {
-            dispatch('switch', {
-                key: 'isOtherHistory',
-                value: true
-            })
+            dispatch('set', { isOtherHistory: true })
         }
     },
 

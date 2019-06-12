@@ -29,7 +29,7 @@ export function keyValues(obj) {
   }))
 }
 
-export function keyValue(obj) {
-  return keyValues(obj)[0]
+export function keyValue(raw) {
+  return typeof raw === 'object' ? keyValues(raw)[0] : raw
 }
 

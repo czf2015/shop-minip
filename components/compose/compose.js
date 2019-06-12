@@ -199,10 +199,7 @@ Component({
       wx.navigateBack({
         delta: 1
       }, () => {
-        dispatch('switch', {
-          key: 'hadLook',
-          value: false
-        })
+        dispatch('set', { hadLook: false })
       })
     },
 

@@ -32,10 +32,7 @@ export function getPreference(orders) {
             promotions.forEach((promotion, idx) => {
                 promotion.coupon.checked = idx === index
             })
-            dispatch('set', {
-                key: 'preference',
-                value: preference
-            })
+            dispatch('set', { preference })
             resolve(preference)
         })
             .catch(err => {

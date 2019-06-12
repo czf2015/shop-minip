@@ -121,7 +121,7 @@ Component({
         id,
         msg
       } = this.data.order
-      // dispatch('set', {key: 'orderItems', value: msg.full_order_info.orders})
+
       const { orders } = msg.full_order_info
       if (orders.length === 1) {
         wx.navigateTo({

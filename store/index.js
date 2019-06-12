@@ -19,12 +19,12 @@ export const store = {
         throw new Error({
           name: 'TypeError',
           message: `${value} is not ${typeof state[key]}`,
-          stack: `dispatch('set', ${{ key, value }})`
+          stack: `dispatch('set', ${{ [key]: value }})`
         })
       }
     }
   },
-  reset({ key }) {
+  reset(key) {
     this.state[key] = state[key]
   },
   step({ key, value }) {
@@ -34,18 +34,18 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} or ${value} is not number`,
-        stack: `dispatch('step', ${{ key, value }})`
+        stack: `dispatch('step', ${{ [key]: value }})`
       })
     }
   },
-  toggle({ key, value }) {
-    if (typeof state[key] === 'boolean' && typeof value === 'boolean') {
-      this.state[key] = value
+  toggle(key) {
+    if (typeof state[key] === 'boolean') {
+      this.state[key] = !this.state[key]
     } else {
       throw new Error({
         name: 'TypeError',
-        message: `${key} or ${value} is not boolean`,
-        stack: `dispatch('toggle', ${{ key, value }})`
+        message: `${key} is not boolean`,
+        stack: `dispatch('toggle', ${key})`
       })
     }
   },
@@ -56,7 +56,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not string`,
-        stack: `dispatch('replace', ${{ key, value }})`
+        stack: `dispatch('replace', ${{ [key]: value }})`
       })
     }
   },
@@ -67,7 +67,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} or ${value} is not string`,
-        stack: `dispatch('prefix', ${{ key, value }})`
+        stack: `dispatch('prefix', ${{ [key]: value }})`
       })
     }
   },
@@ -78,7 +78,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} or ${value} is not string`,
-        stack: `dispatch('suffix', ${{ key, value }})`
+        stack: `dispatch('suffix', ${{ [key]: value }})`
       })
     }
   },
@@ -94,7 +94,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not string or array`,
-        stack: `dispatch('slice', ${{ key, value }})`
+        stack: `dispatch('slice', ${{ [key]: value }})`
       })
     }
   },
@@ -105,7 +105,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not array`,
-        stack: `dispatch('splice', ${{ key, value }})`
+        stack: `dispatch('splice', ${{ [key]: value }})`
       })
     }
   },
@@ -120,29 +120,29 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not array`,
-        stack: `dispatch('push', ${{ key, value }})`
+        stack: `dispatch('push', ${{ [key]: value }})`
       })
     }
   },
-  pop({ key }) {
+  pop(key) {
     if (Array.isArray(state[key])) {
       this.state[key].pop()
     } else {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not array`,
-        stack: `dispatch('pop', ${{ key }})`
+        stack: `dispatch('pop', ${key})`
       })
     }
   },
-  shift({ key }) {
+  shift(key) {
     if (Array.isArray(state[key])) {
       this.state[key].shift()
     } else {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not array`,
-        stack: `dispatch('shift', ${{ key }})`
+        stack: `dispatch('shift', ${key})`
       })
     }
   },
@@ -157,7 +157,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not array`,
-        stack: `dispatch('unshift', ${{ key, value }})`
+        stack: `dispatch('unshift', ${{ [key]: value }})`
       })
     }
   },
@@ -168,7 +168,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not object`,
-        stack: `dispatch('format', ${{ key, value }})`
+        stack: `dispatch('format', ${{ [key]: value }})`
       })
     }
   },
@@ -179,7 +179,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not object`,
-        stack: `dispatch('adapt', ${{ key, value }})`
+        stack: `dispatch('adapt', ${{ [key]: value }})`
       })
     }
   },
@@ -190,7 +190,7 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not object`,
-        stack: `dispatch('append', ${{ key, value }})`
+        stack: `dispatch('append', ${{ [key]: value }})`
       })
     }
   },
@@ -201,13 +201,13 @@ export const store = {
       throw new Error({
         name: 'TypeError',
         message: `${key} is not object`,
-        stack: `dispatch('remove', ${{ key, value }})`
+        stack: `dispatch('remove', ${{ [key]: value }})`
       })
     }
   },
   record(action, payload) {
     if (action !== 'foreward' && action !== 'backward') {
-      const { key } = keyValue(payload)
+      const key = keyValue(payload).key || payload
       if (record[key]) {
         record[key].position++
         record[key].sequence.push({ action, payload, [key]: this.state[key] })
@@ -220,25 +220,42 @@ export const store = {
       console.log(record[key])
     }
   },
-  backward({ key }) {
-    this.state[key] = record[key].sequence[record[key].position--][key]
+  backward(key) {
+    if (record[key].position > 0) {
+      this.state[key] = record[key].sequence[--record[key].position][key]
+    } else {
+      console.log('')
+    }
   },
-  foreward({ key }) {
-    this.state[key] = record[key].sequence[record[key].position++][key]
+  foreward(key) {
+    if (record[key].position < record[key].sequence - 1) {
+      this.state[key] = record[key].sequence[++record[key].position][key]
+    } else {
+      console.log('')
+    }
   },
 }
 
 // 
 export function dispatch(action, payload) {
-  const _payload = keyValue(payload)
-  store[action](_payload)
-  // switch (_payload.key) {
-  // case 'suggestion' || 'initData' :
-  //   store.record(action, payload)
-  // }
+  if (typeof payload === 'object') {
+    if (Array.isArray(payload)) {
+      payload.forEach(item => dispatch(action, item))
+    } else {
+      keyValues(payload).forEach(item => {
+        store[action](item)
+        // switch (item.key) {
+        // case 'suggestion' || 'initData' :
+        //   store.record(action, item)
+        // }
+      })
+    }   
+  } else {
+    store[action](payload)
+    // switch (payload) {
+    // case 'suggestion' || 'initData' :
+    //   store.record(action, payload)
+    // }
+  } 
 }
 
-
-export function dispatches(action, payload) {
-  Object.keys(payload).forEach(key => dispatch(action, {[key]: payload[key]}))
-}

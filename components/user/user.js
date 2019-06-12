@@ -1,6 +1,6 @@
 // components/user/user.js
 // store
-import { store, dispatch } from '../../store/index.js'
+import { store } from '../../store/index.js'
 // utils
 import { authorize } from '../../utils/Admin.js'
 

@@ -34,10 +34,7 @@ export function login() {
           code
         } = res
         if (code) {
-          dispatch('set', {
-            key: 'code',
-            value: code
-          })
+          dispatch('set', { code })
           // 发送 code 到后台换取 openid, sessionKey, unionId
           wx.request({
             url,
@@ -72,21 +69,12 @@ export function login() {
                     } = result
                     // giftReferCode
                     if (giftReferCode) {
-                      dispatch('set', {
-                        key: 'giftReferCode',
-                        value: giftReferCode
-                      })
+                      dispatch('set', { giftReferCode })
                     }
-                    dispatch('set', {
-                      key: 'userId',
-                      value: userId
-                    })
+                    dispatch('set', { userId })
                     // openid——程序必须有
                     if (openid) {
-                      dispatch('set', {
-                        key: 'openid',
-                        value: openid
-                      })
+                      dispatch('set', { openid })
                     } else {
                       wxerrorlog({
                         result
@@ -100,10 +88,7 @@ export function login() {
                     }
                     // unionId——新用户没有
                     if (unionId) {
-                      dispatch('set', {
-                        key: 'unionId',
-                        value: unionId
-                      })
+                      dispatch('set', { unionId })
                     }
                   } else {
                     wxerrorlog({
@@ -183,14 +168,8 @@ export function getWxUserInfo() {
                 const {
                   userInfo
                 } = res2
-                dispatch('set', {
-                  key: 'wxUserInfo',
-                  value: userInfo
-                })
-                dispatch('switch', {
-                  key: 'hasWxUserInfo',
-                  value: true
-                })
+                dispatch('set', { wxUserInfo: userInfo })
+                dispatch('set', { hasWxUserInfo: true })
                 resolve(userInfo)
               },
               fail(err2) {
@@ -247,14 +226,8 @@ export function authorize(e, page) {
         openid,
       },
       success(res) {
-        dispatch('set', {
-          key: 'wxUserInfo',
-          value: userInfo
-        })
-        dispatch('switch', {
-          key: 'hasWxUserInfo',
-          value: true
-        })
+        dispatch('set', { wxUserInfo: userInfo })
+        dispatch('set', { hasWxUserInfo: true })
         wx.showToast({
           title: '授权成功',
           mask: true,

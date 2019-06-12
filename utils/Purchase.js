@@ -46,10 +46,7 @@ export function getProductsInfo() {
                             products.forEach(item => {
                                 Products[item.id] = item
                             })
-                            dispatch('set', {
-                                key: 'Products',
-                                value: Products
-                            })
+                            dispatch('set', { Products })
                             resolve(Products)
                         } else {
                             wx.showToast({
@@ -246,13 +243,10 @@ export function getTransportFee() {
                 errorMsg: '未查询到邮费请稍后再试'
             }).then(res => {
                 const {
-                    result
+                    result: transportFee
                 } = res.data
-                dispatch('set', {
-                    key: 'transportFee',
-                    value: result
-                })
-                resolve(result)
+                dispatch('set', { transportFee })
+                resolve(transportFee)
             }).catch(err => {
                 wxerrorlog(err, 'getTransportFee->获取运费失败')
             })
