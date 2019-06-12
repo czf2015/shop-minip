@@ -228,7 +228,7 @@ export const store = {
     }
   },
   foreward(key) {
-    if (record[key].position < record[key].sequence - 1) {
+    if (record[key].position < record[key].sequence.length - 1) {
       this.state[key] = record[key].sequence[++record[key].position][key]
     } else {
       console.log('')
