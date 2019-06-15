@@ -1,6 +1,6 @@
 // 
 import {
-    baseURL,
+    base,
     path
 } from '../mocks/API.js'
 // 
@@ -17,7 +17,7 @@ import {
 export function getPreference(orders) {
     return new Promise((resolve, reject) => {
         request({
-            url: `${baseURL}/${path.preference}?${Math.random()}`,
+            url: `${base}/${path.preference}?${Math.random()}`,
             method: 'POST',
             data: {
                 orders
@@ -45,7 +45,7 @@ export function getPreference(orders) {
 export function getCoupons() {
     return new Promise((resolve, reject) => {
         request({
-            url: `${baseURL}/${path.coupon}?${Math.random()}`,
+            url: `${base}/${path.coupon}?${Math.random()}`,
             errorMsg: '优惠券获取失败'
         }).then(res => {
             const coupons = res.data.result.map(coupon => {

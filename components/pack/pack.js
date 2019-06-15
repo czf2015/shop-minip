@@ -2,7 +2,7 @@
 // mocks
 import { interval } from '../../mocks/TIME.js'
 import {
-  baseURL,
+  base,
   path
 } from '../../mocks/API.js'
 import {
@@ -50,7 +50,7 @@ Component({
       const that = this
 
       request({
-        url: `${baseURL}/v1/update_shopping_cart`,
+        url: `${base}/v1/update_shopping_cart`,
         method: 'POST',
         data: {
           "goodsInfo": {
@@ -83,7 +83,7 @@ Component({
         success(res) {
           if (res.confirm) {
             request({
-              url: `${baseURL}/v1/delete_shopping_cart`,
+              url: `${base}/v1/delete_shopping_cart`,
               method: 'POST',
               data: {
                 "goodsInfo": {

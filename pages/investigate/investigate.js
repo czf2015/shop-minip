@@ -4,7 +4,7 @@ import {
   questions
 } from '../../mocks/INVESTIGATE.js'
 import {
-  baseURL,
+  base,
   path
 } from '../../mocks/API.js'
 import {
@@ -168,7 +168,7 @@ Page({
     }
 
     wx.request({
-      url: baseURL + '/v1/quick_survey',
+      url: base + '/v1/quick_survey',
       data: answer,
       method: 'POST',
       success(res) {

@@ -1,6 +1,6 @@
 const LINE = 'https://***/api'
 const TEST = 'https://test.***/api'
-export const baseURL = LINE
+export const base = LINE
 
 export const path = {
   // 认证

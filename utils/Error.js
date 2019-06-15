@@ -1,5 +1,5 @@
 // 
-import {baseURL, path} from '../mocks/API.js'
+import {base, path} from '../mocks/API.js'
 // 
 import {store} from '../store/index.js'
 // 
@@ -17,7 +17,7 @@ export function wxerrorlog(error = {}, position = '') {
     value
   } = getStorageSync('cookies')
   wx.request({
-    url: `${baseURL}/${path.error}?openid=${openid}`,
+    url: `${base}/${path.error}?openid=${openid}`,
     header: {
       cookie: `${name}=${value}`
     },

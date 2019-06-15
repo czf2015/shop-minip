@@ -1,6 +1,6 @@
 // 
 import {
-    baseURL,
+    base,
     path,
 } from '../mocks/API.js'
 // 
@@ -9,7 +9,7 @@ import {
     store
 } from '../store/index.js'
 // 
-const url = `${baseURL}/${path.formid}`
+const url = `${base}/${path.formid}`
 
 
 export function submitFormid(e) {

@@ -3,7 +3,7 @@ import {
   interval
 } from '../mocks/TIME.js'
 import {
-  baseURL,
+  base,
   path,
 } from '../mocks/API.js'
 // 
@@ -22,7 +22,7 @@ import {
   setStorageSync
 } from './Platform.js'
 // 
-const url = `${baseURL}/${path.admin}`
+const url = `${base}/${path.admin}`
 
 
 export function login() {

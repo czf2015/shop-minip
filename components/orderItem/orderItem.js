@@ -1,7 +1,7 @@
 // components/orderItem/orderItem.js
 // mocks
 import { interval } from '../../mocks/TIME.js'
-import { baseURL } from '../../mocks/API.js'
+import { base } from '../../mocks/API.js'
 import {
   OrderStatus,
   Specifies,
@@ -51,7 +51,7 @@ Component({
         success(res) {
           if (res.confirm) {
             request({
-              url: `${baseURL}/v1/${e.target.dataset.path}`,
+              url: `${base}/v1/${e.target.dataset.path}`,
               method: 'POST',
               data: {
                 "orderInfo": { //key名称，必填
@@ -88,7 +88,7 @@ Component({
         success(res) {
           if (res.confirm) {
             request({
-              url: `${baseURL}/v1/update_user_orders_status?${new Date().getTime()}`,
+              url: `${base}/v1/update_user_orders_status?${new Date().getTime()}`,
               method: 'POST',
               data: {
                 "orderInfo": { //key名称，必填
@@ -137,7 +137,7 @@ Component({
     cancelRefundRequest() {
       const that = this
       request({
-        url: `${baseURL}/v1/user_refund?${new Date().getTime()}`,
+        url: `${base}/v1/user_refund?${new Date().getTime()}`,
         method: 'POST',
         data: {
           "refund_info": { //key名称，必填

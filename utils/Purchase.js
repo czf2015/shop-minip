@@ -1,6 +1,6 @@
 // 
 import {
-    baseURL,
+    base,
     path
 } from '../mocks/API.js'
 import {
@@ -33,7 +33,7 @@ export function getProductsInfo() {
             resolve(store.state.Products)
         } else {
             wx.request({
-                url: `${baseURL}/${path.goods}`,
+                url: `${base}/${path.goods}`,
                 success(res) {
                     const {
                         status,
@@ -94,7 +94,7 @@ export function getCartInfo(product_list = false, suggest_order = false) {
         const cookies = getStorageSync('cookies')
 
         wx.request({
-            url: `${baseURL}/${path.cart}`,
+            url: `${base}/${path.cart}`,
             header: {
                 cookie: `${cookies.name}=${cookies.value}`
             },
@@ -147,7 +147,7 @@ export function getCartInfo(product_list = false, suggest_order = false) {
 
 export function createOrder(orderItemIds, addressItemId, couponId) {
     request({
-        url: `${baseURL}/v1/create_order?${new Date().getTime()}`,
+        url: `${base}/v1/create_order?${new Date().getTime()}`,
         method: 'POST',
         data: {
             orderInfo: { //key名称，必填
@@ -200,7 +200,7 @@ export function paying(orderId) {
 
     return new Promise((resolve, reject) => {
         wx.request({
-            url: `${baseURL}/v1/wxpay?${new Date().getTime()}`,
+            url: `${base}/v1/wxpay?${new Date().getTime()}`,
             header: {
                 cookie: `${getStorageSync('cookies').name}=${getStorageSync('cookies').value}`
             },
@@ -236,7 +236,7 @@ export function getTransportFee() {
             resolve(transportFee)
         } else {
             request({
-                url: `${baseURL}/v1/transport_fee_rule`,
+                url: `${base}/v1/transport_fee_rule`,
                 data: {
                     number: Math.random * 10000
                 },
