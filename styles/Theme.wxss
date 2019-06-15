@@ -1,3 +1,28 @@
+/* 风格 */
+
+.light {
+
+}
+
+.dark {
+
+}
+
+.grey {
+
+}
+
+.bright {
+
+}
+
+.opacity {
+
+}
+
+
+/* 作用 */
+
 .primary {
     color: white;
     background-color: blue;
