@@ -1,0 +1,4 @@
+radio,
+checkbox {
+    display: none;
+}

@@ -1,0 +1,89 @@
+.page {
+
+}
+
+.header {
+
+}
+
+.main {
+
+}
+
+.footer {
+
+}
+
+.aside {
+
+}
+
+.section {
+
+}
+
+.dir {
+
+}
+
+.subject {
+
+}
+
+.article {
+
+}
+
+.title {
+
+}
+
+.subtitle {
+
+}
+
+.content {
+
+}
+
+.paragraph {
+    
+}
+
+.summary {
+
+}
+
+.details {
+
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.center {
+    align-self: center;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}

@@ -1,0 +1,24 @@
+.primary {
+    color: white;
+    background-color: blue;
+}
+
+.warning {
+    color: white;
+    background-color: yellow;
+}
+
+.success {
+    color: white;
+    background-color: green;
+}
+
+.danger {
+    color: white;
+    background-color: red;
+}
+
+.info {
+    color: white;
+    background-color: blue;
+}

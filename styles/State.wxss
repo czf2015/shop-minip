@@ -1,0 +1,15 @@
+:link {}
+
+:visited {}
+
+:hover {}
+
+:active {}
+
+:focus {}
+
+:invalid {}
+
+.disabled {
+    disabled: disabled;
+}
