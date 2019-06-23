@@ -11,10 +11,11 @@ import {
 import {
   wxerrorlog
 } from './Error.js'
+import { getStorageSync } from './Platform.js'
+// services
 import {
   login
-} from './Admin.js'
-import { getStorageSync } from './Platform.js'
+} from '../services/Admin.js'
 
 
 export function http({

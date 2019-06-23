@@ -6,15 +6,13 @@ import {
   dispatch,
   store
 } from '../../store/index.js'
-// utils
+// services
 import {
   specifies,
   getPackPrice,
   getCategoriesPrice,
-} from '../../utils/calculate.js'
-import { request } from '../../utils/Http.js'
-import { wxerrorlog } from '../../utils/Error.js'
-import { getTransportFee } from '../../utils/purchase.js'
+  getTransportFee,
+} from '../../Services/Purchase.js'
 
 
 Component({

@@ -3,9 +3,10 @@ import {
     dispatch,
 } from './store/index.js'
 // utils
-import { login, getWxUserInfo } from './utils/Admin.js'
-import { getCartInfo, getProductsInfo } from './utils/Purchase.js'
 import { wxerrorlog } from './utils/Error.js'
+// services
+import { login, getWxUserInfo } from './services/Admin.js'
+import { getCartInfo, getProductsInfo } from './services/Purchase.js'
 // 小程序发布版本号
 const version = '0.0.0' + 'a' + 1 // Major.Minor.Patch(功能：主版本号、次版本及修订号) + a/b/c（阶段：开发/测试/上线） + 次数
 

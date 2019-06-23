@@ -11,16 +11,16 @@ import {
   dispatch,
   store
 } from '../store/index.js'
-// 
+// utils
 import {
   wxerrorlog
-} from './Error.js'
+} from '../utils/Error.js'
 import {
   parseCookie
-} from './Parse.js'
+} from '../utils/Parse.js'
 import {
   setStorageSync
-} from './Platform.js'
+} from '../utils/Platform.js'
 // 
 const url = `${base}/${path.admin}`
 

@@ -1,16 +1,28 @@
-export function deepCopy(obj) {
-  const result = Array.isArray(obj) ? [] : {};
-  for (const key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      if (typeof obj[key] === 'object') {
-        result[key] = deepCopy(obj[key]); // 递归复制
-      } else {
-        result[key] = obj[key];
+export function deepCopy(oldObj) {
+  const list = []
+
+  return function deepCopy(oldObj) {
+    list.push(oldObj)
+
+    const newObj = Array.isArray(oldObj) ? [] : {}
+
+    for (const key in oldObj) {
+      if (oldObj.hasOwnProperty(key)) {
+        if (typeof oldObj[key] === 'object') {
+          if (list.find(item => item === oldObj[key]) && Object.keys(raw).length > 1) {
+            // console.log(`{ ${key}: [Circular] }`)
+            newObj[key] = oldObj[key]
+          } else {
+            newObj[key] = deepCopy(oldObj[key])
+          }
+        } else {
+          newObj[key] = oldObj[key]
+        }
       }
     }
-  }
 
-  return result;
+    return newObj
+  }(oldObj)
 }
 
 // 判断对象或数组为空值

@@ -8,10 +8,10 @@ import {
     dispatch,
     store
 } from '../store/index.js'
-// 
+// utils
 import {
     request
-} from './Http.js'
+} from '../utils/Http.js'
 
 
 export function getPreference(orders) {

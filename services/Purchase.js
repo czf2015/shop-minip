@@ -11,19 +11,19 @@ import {
     dispatch,
     store
 } from '../store/index.js'
-// 
+// utils
 import {
     request
-} from './Http.js'
+} from '../utils/Http.js'
 import {
     wxerrorlog
-} from './Error.js'
+} from '../utils/Error.js'
 import {
     getStorageSync
-} from './Platform.js'
+} from '../utils/Platform.js'
 import {
     isAvailable
-} from './Object.js'
+} from '../utils/Object.js'
 
 
 // 获取产品信息并保存到本地

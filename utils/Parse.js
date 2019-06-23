@@ -17,52 +17,96 @@ export function parseCookie(cookie) {
 
 
 export function format(raw, fields, convert) {
-  fields.forEach(field => {
-    for (const key in raw) {
-      if (typeof raw[key] === 'object') {
-        raw[key] = format(raw[key], [field], convert)
-      } else {
-        if (key === field) {
-          raw[key] = convert(raw[key])
+  const list = []
+  list.push(raw)
+
+  return function format(raw, fields, convert) {
+    fields.forEach(field => {
+      for (const key in raw) {
+        if (typeof raw[key] === 'object') {
+          if (Array.isArray(raw[key])) {
+            raw[key].forEach(item => item = format(item, [field], convert))
+          } else {
+            if (list.find(item => item === raw[key]) && Object.keys(raw).length > 1) {
+              console.log(`{ ${key}: [Circular] }`)
+              // console.log(raw[key])
+            } else {
+              raw[key] = format(raw[key], [field], convert)
+            }
+          }
+        } else {
+          if (key === field) {
+            raw[key] = convert(raw[key])
+          }
         }
       }
-    }
-  })
+    })
 
-  return raw
+    return raw
+  }(raw, fields, convert)
 }
 
 
 export function adapt(raw, transform) {
-  const result = Array.isArray(raw) ? [] : {}
+  const list = []
 
-  Object.keys(raw).forEach(oldKey => {
-    const newKey = Array.isArray(raw) ?
-      oldKey : transform[oldKey] || oldKey
-    result[newKey] = raw[oldKey]
-    if (raw[oldKey] && typeof raw[oldKey] === 'object' && !Array.isArray(raw[oldKey])) {
-      result[newKey] = adapt(raw[oldKey], transform)
+  return function adapt(raw, transform) {
+    list.push(raw)
+
+    if (Array.isArray(raw)) {
+      raw.forEach(item => item = adapt(item, transform))
+    } else {
+      Object.keys(raw).forEach(oldKey => {
+        const newKey = transform[oldKey] || oldKey
+
+        if (newKey !== oldKey) {
+          raw[newKey] = raw[oldKey]
+          delete raw[oldKey]
+        }
+
+        if (typeof raw[newKey] === 'object') {
+          if (list.find(item => item === raw[newKey]) && Object.keys(raw).length > 1) {
+            console.log(`{ ${newKey}: [Circular] }`)
+          } else {
+            raw[newKey] = adapt(raw[newKey], transform)
+          }
+        }
+      })
     }
-  })
 
-  return result;
+    return raw
+  }(raw, transform)
 }
 
 
 export function extract(raw, separate) {
-  const result = {}
+  const list = []
 
-  for (const key in raw) {
-    if (typeof raw[key] === 'object' && !Array.isArray(raw[key])) {
-      Object.assign(result, extract(raw[key], separate))
-    } else {
+  return function extract(raw, separate) {
+    list.push(raw)
+
+    const result = {}
+
+    for (const key in raw) {
       if (key.includes(separate)) {
         result[key] = raw[key]
       }
-    }
-  }
 
-  return result
+      if (typeof raw[key] === 'object') {
+        if (Array.isArray(raw[key])) {
+          continue
+        } else {
+          if (list.find(item => item === raw[key]) && Object.keys(raw).length > 1) {
+            console.log(`{ ${key}: [Circluar] }`)
+          } else {
+            Object.assign(result, extract(raw[key], separate))
+          }
+        }
+      }
+    }
+
+    return result
+  }(raw, separate)
 }
 
 

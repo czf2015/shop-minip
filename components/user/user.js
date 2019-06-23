@@ -1,8 +1,8 @@
 // components/user/user.js
 // store
 import { store } from '../../store/index.js'
-// utils
-import { authorize } from '../../utils/Admin.js'
+// services
+import { authorize } from '../../services/Admin.js'
 
 
 Component({

@@ -58,6 +58,17 @@
 
 }
 
+.separator {}
+
+.feed {}
+
+.banner {
+
+}
+
+.toolbar {
+
+}
 
 .row {
     display: flex;
@@ -87,3 +98,12 @@
 .inline-block {
     display: inline-block;
 }
+
+.cell {
+    display: table-cell;
+}
+
+.none {
+    display: none;
+}
+

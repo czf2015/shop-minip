@@ -6,8 +6,6 @@ import {
   OrderStatus,
   Specifies,
 } from '../../mocks/BUSINESS.js' //获取常量定义类
-// store
-import { dispatch, store } from '../../store/index.js'
 // utils
 import { request } from '../../utils/Http.js'
 import { wxerrorlog } from '../../utils/Error.js'
