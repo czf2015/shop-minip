@@ -24,10 +24,10 @@ export const wish = {
 }
 
 
-export function tip(validate = {}) {
+export function tip(validator = {}) {
   const msgs = []
-  for (const key in validate) {
-    const {valid, msg} = validate[key]
+  for (const key in validator) {
+    const {valid, msg} = validator[key]
     if (!valid) {
       msgs.push(msg)
     }
