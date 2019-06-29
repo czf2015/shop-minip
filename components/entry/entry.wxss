@@ -1,5 +1,5 @@
 /* components/entry/entry.wxss */
-@import "../../css/basic.wxss";
+/* @import "../../styles/basic.wxss"; */
 
 
 .scroll {

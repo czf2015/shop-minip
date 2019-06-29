@@ -1,7 +1,7 @@
 /* components/coupon/coupon.wxss */
 
 
-@import "../../font/font.wxss";
+/* @import "../../font/font.wxss"; */
 
 /* couponOne */
 

@@ -12,7 +12,7 @@ import {
   getPackPrice,
   getCategoriesPrice,
   getTransportFee,
-} from '../../Services/Purchase.js'
+} from '../../services/Purchase.js'
 
 
 Component({

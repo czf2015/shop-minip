@@ -1,4 +1,4 @@
-@import "../../css/basic.wxss";
+/* @import "../../styles/basic.wxss"; */
 
 
 .card {

@@ -1,1 +1,17 @@
-{}
+{
+    "pages": [
+      "pages/investigate/investigate"
+    ],
+    "window": {
+      "navigationBarTitleText": "Demo"
+    },
+    "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+    "debug": true,
+    "navigateToMiniProgramAppIdList": [
+      "wxe5f52902cf4de896"
+    ],
+  "sitemapLocation": "sitemap86.json"
+}
