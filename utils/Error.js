@@ -1,5 +1,5 @@
 // 
-import {base, path} from '../mocks/API.js'
+import {base, path} from '../mock/API.js'
 // 
 import {store} from '../store/index.js'
 // 

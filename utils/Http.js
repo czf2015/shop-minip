@@ -1,7 +1,7 @@
 // 
 import {
   interval
-} from '../mocks/TIME.js'
+} from '../mock/TIME.js'
 // 
 import {
   dispatch,

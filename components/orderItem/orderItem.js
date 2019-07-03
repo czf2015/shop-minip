@@ -1,11 +1,11 @@
 // components/orderItem/orderItem.js
 // mocks
-import { interval } from '../../mocks/TIME.js'
-import { base } from '../../mocks/API.js'
+import { interval } from '../../mock/TIME.js'
+import { base } from '../../mock/API.js'
 import {
   OrderStatus,
   Specifies,
-} from '../../mocks/BUSINESS.js' //获取常量定义类
+} from '../../mock/BUSINESS.js' //获取常量定义类
 // utils
 import { request } from '../../utils/Http.js'
 import { wxerrorlog } from '../../utils/Error.js'

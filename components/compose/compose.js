@@ -1,6 +1,6 @@
 // components/compose/compose.js 
 // mocks
-import { interval } from '../../mocks/TIME.js'
+import { interval } from '../../mock/TIME.js'
 // store
 import {
   dispatch,

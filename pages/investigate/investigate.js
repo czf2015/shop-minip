@@ -2,14 +2,14 @@
 // mocks
 import {
   questions
-} from '../../mocks/INVESTIGATE.js'
+} from '../../mock/INVESTIGATE.js'
 import {
   base,
   path
-} from '../../mocks/API.js'
+} from '../../mock/API.js'
 import {
   interval
-} from '../../mocks/TIME.js'
+} from '../../mock/TIME.js'
 // store
 import {
   store

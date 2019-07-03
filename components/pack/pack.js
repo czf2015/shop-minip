@@ -1,13 +1,13 @@
 // components/pack/pack.js
 // mocks
-import { interval } from '../../mocks/TIME.js'
+import { interval } from '../../mock/TIME.js'
 import {
   base,
   path
-} from '../../mocks/API.js'
+} from '../../mock/API.js'
 import {
   Specifies,
-} from '../../mocks/BUSINESS.js'
+} from '../../mock/BUSINESS.js'
 // utils
 import { request } from '../../utils/Http.js'
 import { wxerrorlog } from '../../utils/Error.js'

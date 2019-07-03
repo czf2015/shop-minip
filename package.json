@@ -1,1 +1,27 @@
-{}
+{
+  "name": "shop-minip",
+  "description": "虽只能算是“玩具项目”，但却倾注个人“点滴血汗”。",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/czf2015/shop-minip.git"
+  },
+  "keywords": [
+    "shop",
+    "minip"
+  ],
+  "author": "czf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/czf2015/shop-minip/issues"
+  },
+  "homepage": "https://github.com/czf2015/shop-minip#readme"
+}
